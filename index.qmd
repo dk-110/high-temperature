@@ -2,6 +2,26 @@
 title: "High Temperatures"
 ---
 
-This is a Quarto website.
+```{r}
+libraray(tidyverse)
+library(worldmet)
+library(dplyr)
+library(ggplot2)
+library(lubridate)
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+```
+
+
+```{r}
+# Get metadata for all stations
+stations <- getMeta()
+
+# Filter for stations in Chicago
+chicago_stations <- subset(stations, grepl("CHICAGO", site, ignore.case = TRUE))
+print(chicago_stations)
+```
+
+
+```{r}
+
+```
